@@ -1,4 +1,4 @@
-#import "../template/thesistemplate.typ": *
+#import "../thesistemplate.typ": *
 #import "./manual-template.typ": *
 
 #show: manual-template.with(
@@ -82,7 +82,7 @@ Le modèle #cmd("thesistemplate") possède un certain nombre de paramètres perm
   specialty: "Mécanique",
   commity: (),
   lang: "fr",
-  logo: "../images/logo_cnam.png",
+  logo: "images/logo_cnam.png",
   body-font: "Noto Sans",
   math-font: "Noto Sans Math",
 	[body]))[
@@ -147,7 +147,13 @@ Le modèle #cmd("thesistemplate") possède un certain nombre de paramètres perm
 
 		Outre le français, la seule langue prise en compte est l'anglais (`lang: "en"`).]
 
-		#argument("logo", default: "../images/logo_cnam.png", types: "string")[Chemin vers le logo de l'établissement de préparation du mémoire.]
+		#argument("logo", default: "images/logo_cnam.png", types: "string")[Chemin vers le logo de l'établissement de préparation du mémoire.
+		#wbox[
+			#set text(size: 11pt)
+
+			Il faut que le template soit à la racine du répertoire pour que le chemin soit correctement interprété. Dans le cas contraire, une erreur de compilation sera générée.
+		]
+		]
 
 		#argument("body-font", default: "Noto Sans", types: "string")[Nom de la police de caractère du corps du texte.]
 
@@ -203,6 +209,7 @@ D'une manière générale, la partie du fichier principal correspondant au conte
 
 Le contenu du mémoire est divisé en trois parties principales : `front-matter`, `main-matter` et `appendix`. Ces éléments s'accompagnent de fonctions complémentaires permettant de faciliter la rédaction du mémoire.
 
+#pagebreak()
 === Environnements
 
 Le modèle propose trois environnements pour structurer le contenu du mémoire :
@@ -249,7 +256,6 @@ Les chapitres du mémoire sont définis par la fonction #cmd("chapter") qui disp
 	#argument("numbered", default: true, types: "boolean")[Indique si le chapitre doit être numéroté.]
 ]
 
-#pagebreak()
 #example-box[
 ```typ
 #chapitre(
@@ -257,7 +263,7 @@ Les chapitres du mémoire sont définis par la fonction #cmd("chapter") qui disp
   abstract: [Résumé du chapitre],
   toc: true,
   numbered: true
-)[...]	
+)[...]
 ```
 ]
 
@@ -318,7 +324,7 @@ Pour encadrer une équation importante, la fonction #cmd("boxeq") doit être uti
 
 #example-box[
 	#set math.equation(numbering: "(1)")
-	#show math.equation: set text(font: "Noto Sans Math")
+	#show math.equation: set text(font: "Noto Sans Math", fallback: false)
 
 	```typ
 	$

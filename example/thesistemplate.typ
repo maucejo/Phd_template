@@ -204,7 +204,7 @@ long }}
   set align(horizon)
   grid(columns : 2,
     column-gutter: 1fr,
-    [#align(left)[#image("../images/devise_cnam.png", width: 45%)]],   [#align(right)[#image("../images/logo_cnam.png", width: 45%)]],
+    [#align(left)[#image("images/devise_cnam.png", width: 45%)]],   [#align(right)[#image("images/logo_cnam.png", width: 45%)]],
   )
 
   context{
@@ -241,6 +241,20 @@ long }}
   }
 }
 
+// Font exists ?
+#let checkfont(font) = context {
+		let res = true
+    let size = measure(text(font: font, fallback: false)[
+        Test
+    ])
+
+    if size.width == 0pt {
+        res = false
+    }
+
+		return res
+}
+
 // Template
 #let thesistemplate(
   title: "Titre de la thèse",
@@ -256,7 +270,7 @@ long }}
   specialty: "Mécanique",
   commity: (),
   lang: "fr",
-  logo: "../images/logo_cnam.png",
+  logo: "images/logo_cnam.png",
   body-font: "Noto Sans",
   math-font: "Noto Sans Math",
   body
@@ -267,6 +281,7 @@ long }}
   // Fonts
   set text(font: body-font, lang: lang, size: text-size)
 
+  // Math font
   show math.equation: set text(font: math-font, stylistic-set: 1)
 
   // Page layout
@@ -473,7 +488,7 @@ long }}
         v(0.05em)
       }
     }
-    if cosupersivsor!=none {
+    if cosupervisor != none {
       for codirector in cosupervisor {
         text([Co-encadrant : *#codirector*], size: 1.15em)
         v(0.05em)

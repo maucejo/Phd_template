@@ -1,4 +1,4 @@
-#import "../template/thesistemplate.typ": *
+#import "../thesistemplate.typ": *
 
 #chapter("Introduction", abstract: lorem(50), numbered: false)[
 

@@ -1,4 +1,4 @@
-#import "../template/thesistemplate.typ": chapter
+#import "../thesistemplate.typ": *
 
 #chapter("Conclusion et perspectives", toc: false, numbered: false)[
 
