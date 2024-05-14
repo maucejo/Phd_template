@@ -1,4 +1,4 @@
-#import "../template/thesistemplate.typ": *
+#import "../../template/thesistemplate.typ": *
 
 #chapter("Fondements mathématiques", toc: false)[
 
