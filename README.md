@@ -10,4 +10,4 @@ Pour utiliser le modèle, il faut l'importer dans votre fichier principal `typ` 
 #import "./template/thesistemplate.typ": *
 ```
 
-Pour plus d'informations, veuillez consulter le [https://github.com/maucejo/Phd_template/blob/main/docs/manual.pdf](manuel).
+Pour plus d'informations, veuillez consulter le [manuel](https://github.com/maucejo/Phd_template/blob/main/docs/manual.pdf).
