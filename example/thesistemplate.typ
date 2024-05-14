@@ -282,7 +282,9 @@ long }}
   set text(font: body-font, lang: lang, size: text-size)
 
   // Math font
-  show math.equation: set text(font: math-font, stylistic-set: 1)
+
+  let math-fonts = (math-font, "New Computer Modern Math")
+  show math.equation: set text(font: math-fonts, stylistic-set: 1)
 
   // Page layout
   set page(paper: paper-size)
@@ -510,6 +512,7 @@ long }}
         },
       )
     ]
+
     v(1fr)
   }
 
